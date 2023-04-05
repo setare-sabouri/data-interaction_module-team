@@ -3,6 +3,7 @@ const { Sequelize, DataTypes, UUID } = require("sequelize");
 require("dotenv").config();
 const app = express();
 const port = 3000;
+app.use(express.static("public"))
 app.set("view engine", "ejs")
 const sequelize = new Sequelize(
 	`postgres://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_URL}:${process.env.DB_PORT}/${process.env.DB_NAME}`
@@ -33,19 +34,13 @@ const main = async () => {
 	}
 };
 
-app.get("/", (req, res) => {
-	res.render("index")
-});
-const tasksRouter = require('./routes/tasks')
-const usersRouter = require('./routes/users')
+const tasksRouter = require('./routes/task-routs');
+
 app.listen(port, () => {
 	console.log(`Example app listening on port ${port}`);
 });
 
 
-app.use(tasksRouter)
-app.use(usersRouter)
-
-//app.use(UserRouter) for updates later on accounts 
+app.use(tasksRouter);
 
 main();
