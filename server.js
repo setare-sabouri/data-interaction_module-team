@@ -34,12 +34,18 @@ const main = async () => {
 };
 
 app.get("/", (req, res) => {
-	// res.send("Hello World!");
 	res.render("index")
 });
-
+const tasksRouter = require('./routes/tasks')
+const usersRouter = require('./routes/users')
 app.listen(port, () => {
 	console.log(`Example app listening on port ${port}`);
 });
+
+
+app.use(tasksRouter)
+app.use(usersRouter)
+
+//app.use(UserRouter) for updates later on accounts 
 
 main();
