@@ -1,5 +1,5 @@
 # todo-app_data-interaction
 
 ## Tech-Stack
-+ sequlize
++ [Sequlize](https://sequelize.org/)
 + express
