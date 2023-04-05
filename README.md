@@ -2,4 +2,4 @@
 
 ## Tech-Stack
 + [Sequlize](https://sequelize.org/)
-+ express
++ postgres database
