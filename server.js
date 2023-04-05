@@ -3,7 +3,7 @@ const { Sequelize, DataTypes, UUID } = require("sequelize");
 require("dotenv").config();
 const app = express();
 const port = 3000;
-
+app.set("view engine", "ejs")
 const sequelize = new Sequelize(
 	`postgres://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_URL}:${process.env.DB_PORT}/${process.env.DB_NAME}`
 );
@@ -34,7 +34,8 @@ const main = async () => {
 };
 
 app.get("/", (req, res) => {
-	res.send("Hello World!");
+	// res.send("Hello World!");
+	res.render("index")
 });
 
 app.listen(port, () => {
