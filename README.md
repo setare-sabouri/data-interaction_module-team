@@ -1,5 +1,5 @@
 # todo-app_data-interaction
-This To-do application is written in JavaScript using the React framework for the front-end and Node.js for the back-end
+CRUD RESTful API in a Node.js environment that runs on an Express server and uses a PostgreSQL database
 ## Tech-Stack
 + [Sequlize](https://sequelize.org/)
 + postgres database
