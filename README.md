@@ -3,3 +3,6 @@
 ## Tech-Stack
 + [Sequlize](https://sequelize.org/)
 + postgres database
++ express
++ ejs
++ dotenv
