@@ -25,9 +25,6 @@ router.delete("/tasks", (req, res) => {
     res.send("to delete all task ")
 })
 
-router.get("/tasks/new", (req, res) => {
-    res.render("task.ejs")
-})
 
 
 
