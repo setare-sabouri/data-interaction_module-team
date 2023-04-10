@@ -26,7 +26,4 @@ router.delete("/tasks", (req, res) => {
 })
 
 
-
-
-
-module.exports = router // default export did'nt worked !!!
+module.exports = router 

@@ -1,15 +1,9 @@
 
-const Sequelize = require("sequelize");
-
+const Sequelize = require('sequelize');
+const { DB_NAME, DB_USERNAME, DB_PASSWORD, DB_URL, DB_PORT } = process.env;
 
 const sequelize = new Sequelize(
-    `postgres://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_URL}:${process.env.DB_PORT}/${process.env.DB_NAME}`
+    `postgres://${DB_USERNAME}:${DB_PASSWORD}@${DB_URL}:${DB_PORT}/${DB_NAME}`
 );
 
-const db = {};
-db.Sequelize = Sequelize;
-db.sequelize = sequelize;
-
-db.tasks = require("./task.model")(sequelize, Sequelize);
-
-module.exports = db
+module.exports = sequelize
