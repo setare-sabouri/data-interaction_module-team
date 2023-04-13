@@ -1,10 +1,14 @@
 const TaskTable = require("../models/task.model.js");
 
-const Task = require("../models");
-console.log(Task);
-
-const getAllTasks = () => {
-	console.log(TaskTable);
+const getAllTasks = async (req, res) => {
+	const allTasks = await TaskTable.findAll();
+	res.send("workreknkajkn");
 };
 
-module.exports = { getAllTasks };
+const postNewTask = async (req, res) => {
+	const { title } = req.body;
+	const newTask = await TaskTable.create({ title });
+	res.redirect("/tasks");
+};
+
+module.exports = { getAllTasks, postNewTask };

@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router(); // not app , but a mini app, (middleware?)
-const { getAllTasks } = require("../controllers/task.controller");
+const { getAllTasks, postNewTask } = require("../controllers/task.controller");
+
+router.use(express.json());
 
 router.get("/tasks", (req, res) => {
 	getAllTasks();
-	res.end();
 });
 
 router.get("/tasks/:id", (req, res) => {
@@ -12,7 +13,8 @@ router.get("/tasks/:id", (req, res) => {
 });
 
 router.post("/tasks", (req, res) => {
-	res.send("Create new task");
+	postNewTask();
+	res.redirect("/tasks");
 });
 
 router.put("/tasks/:id", (req, res) => {
