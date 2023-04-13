@@ -1,5 +1,6 @@
 const express = require("express")
 const router = express.Router(); // not app , but a mini app, (middleware?)
+require("../controllers/task.controller");
 
 router.get("/tasks", (req, res) => {
     res.send("all tasks page")
