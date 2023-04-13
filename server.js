@@ -1,9 +1,9 @@
 const express = require("express");
 require("dotenv").config();
-const tasksRouter = require('./routes/task.routs');
+const tasksRouter = require("./routes/task.rouets");
 const app = express();
 const port = 3000;
-const sequelize = require("./models/index")
+const sequelize = require("./models/index");
 const main = async () => {
 	try {
 		await sequelize.authenticate();
@@ -13,6 +13,7 @@ const main = async () => {
 	}
 };
 
+app.use(express.json());
 app.use(tasksRouter);
 
 app.get("/", (req, res) => {
