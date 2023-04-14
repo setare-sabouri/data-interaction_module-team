@@ -4,8 +4,6 @@
 + [Sequlize](https://sequelize.org/)
 + postgres database
 + express
-+ ejs
-+ dotenv
 
 ## REST APIs table
 
