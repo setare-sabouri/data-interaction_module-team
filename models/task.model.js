@@ -12,6 +12,9 @@ const Task = sequelize.define("Task", {
 		allowNull: false,
 		defaultValue: "U didn't pick a title stoopid",
 	},
+	description: {
+		type: DataTypes.TEXT,
+	},
 	completed: {
 		type: DataTypes.BOOLEAN,
 		defaultValue: false,

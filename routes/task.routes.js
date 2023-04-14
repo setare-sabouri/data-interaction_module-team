@@ -5,17 +5,17 @@ const { getAllTasks, postNewTask } = require("../controllers/task.controller");
 router.use(express.json());
 
 router.get("/tasks", (req, res) => {
-	getAllTasks();
+	getAllTasks(req, res);
+});
+
+router.post("/tasks", (req, res) => {
+	postNewTask(req, res);
 });
 
 router.get("/tasks/:id", (req, res) => {
 	res.send(`a task with id ${req.params.id}`);
 });
 
-router.post("/tasks", (req, res) => {
-	postNewTask();
-	res.redirect("/tasks");
-});
 
 router.put("/tasks/:id", (req, res) => {
 	res.send(`to update a task with ${req.params.id}`);
