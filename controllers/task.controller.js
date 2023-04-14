@@ -1,8 +1,8 @@
-const Task = require("../models/task.model");
+const TaskTable = require("../models/task.model");
 
 const getAllTasks = async (req, res) => {
 	try { //CRUD functions return promise , thats why i put try,catch to resolve it ..
-		const allTasks = await Task.findAll();
+		const allTasks = await TaskTable.findAll();
 		console.log(allTasks);
 	} catch (error) {
 		console.error(error);
@@ -13,8 +13,8 @@ const postNewTask = async (req, res) => {
 	const { title, description } = req.body;
 	console.log("Received new task request:", title);
 	try {
-		const newTask = await Task.create({ title, description });
-		res.json(newTask.toJSON()); // when i added this line , Task table got connected to pgadmin and i could see the table there !!! 
+		const newTask = await TaskTable.create({ title, description });
+		res.json(newTask.toJSON()); // when i added this line , TaskTable table got connected to pgadmin and i could see the table there !!! 
 		console.log("new task created : ", newTask);
 		res.redirect("/tasks");
 	} catch (error) {
