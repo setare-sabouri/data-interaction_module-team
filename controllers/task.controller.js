@@ -14,6 +14,7 @@ const postNewTask = async (req, res) => {
 	console.log("Received new task request:", title);
 	try {
 		const newTask = await Task.create({ title, description });
+		res.json(newTask.toJSON()); // when i added this line , Task table got connected to pgadmin and i could see the table there !!! 
 		console.log("new task created : ", newTask);
 		res.redirect("/tasks");
 	} catch (error) {
