@@ -5,7 +5,8 @@ const { getAllTasks, postNewTask } = require("../controllers/task.controller");
 router.use(express.json());
 
 router.get("/tasks", (req, res) => {
-	getAllTasks();
+	// getAllTasks();
+	res.send("yes working ")
 });
 
 router.get("/tasks/:id", (req, res) => {
@@ -13,8 +14,7 @@ router.get("/tasks/:id", (req, res) => {
 });
 
 router.post("/tasks", (req, res) => {
-	postNewTask();
-	res.redirect("/tasks");
+	postNewTask(req, res);
 });
 
 router.put("/tasks/:id", (req, res) => {

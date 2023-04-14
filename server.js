@@ -21,7 +21,8 @@ app.use(express.json());
 app.use(tasksRouter);
 
 app.get("/", (req, res) => {
-	res.redirect("/tasks");
+	res.send("welcome")
+	// res.redirect("/tasks");
 });
 
 app.listen(port, () => {
