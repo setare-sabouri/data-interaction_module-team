@@ -23,8 +23,9 @@ const main = async () => {
 app.use(express.json());
 app.use(tasksRouter);
 
-app.get("/", (req, res) => {
-	res.send("welcome")
+app.get("/", (req, res, next) => {
+	res.send('API is working properly');
+
 });
 
 app.listen(port, () => {
